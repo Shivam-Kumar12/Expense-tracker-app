@@ -1,32 +1,46 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import connectDB from "../config/db.js";
-import expenseRoutes from "../routes/expenseRoutes.js";
-import authRoutes from "../routes/authRoutes.js";
-import adminRoutes from "../routes/adminRoutes.js";
-import { notFound, errorHandler } from "../middleware/errorHandler.js";
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import { errorHandler } from '../middleware/errorHandler.js'
+import authRoutes from '../routes/authRoutes.js'
+import expenseRoutes from '../routes/expenseRoutes.js'
+import adminRoutes from '../routes/adminRoutes.js'
 
-dotenv.config();
-connectDB();
+dotenv.config()
 
-const app = express();
+const app = express()
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-// Routes
-app.use("/api/expenses", expenseRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/admin", adminRoutes);
+app.use('/uploads', express.static('uploads'))
 
-// Health check route
-app.get("/api/health", (req, res) => {
-  res.json({ success: true, message: "Server is running" });
-});
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected successfully'))
+  .catch(err => console.error('❌ MongoDB error:', err.message))
 
-// Error handlers
-app.use(notFound);
-app.use(errorHandler);
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Server is running',
+    timestamp: new Date()
+  })
+})
 
-export default app;
+app.use('/api/auth', authRoutes)
+app.use('/api/expenses', expenseRoutes)
+app.use('/api/admin', adminRoutes)
+
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Route not found'
+  })
+})
+
+app.use(errorHandler)
+
+export default app  // ✅ VERY IMPORTANT
