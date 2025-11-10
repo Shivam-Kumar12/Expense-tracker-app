@@ -16,7 +16,7 @@
     "mongodb": "^7.0.0",
     "mongoose": "^8.0.0",
     "multer": "^2.0.2",
-    "serverless-http": "^3.0.0"
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
