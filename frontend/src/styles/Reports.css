@@ -1,0 +1,181 @@
+.reports-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reports-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reports-header h1 {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.reports-header p {
+  color: black;
+  font-size: 1.1rem;
+}
+
+.reports-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reports-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reports-section h2 {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.filter-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.user-filter,
+.status-filter {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 1rem;
+  min-width: 150px;
+  color: black !important;
+}
+
+.admin-expenses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-expense-item {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-user {
+  background: #e7f3ff;
+  color: #0066cc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: black;
+}
+
+.empty-state p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.loading, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .reports-container {
+    padding: 15px;
+  }
+
+  .reports-header h1 {
+    font-size: 2rem;
+  }
+
+  .reports-section {
+    padding: 15px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .expense-status {
+    text-align: left;
+  }
+
+  .expense-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .expense-user {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}

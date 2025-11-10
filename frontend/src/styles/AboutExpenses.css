@@ -1,0 +1,194 @@
+.about-expenses-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-expenses-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-expenses-header h1 {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.about-expenses-header p {
+  color: black;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filter-section label {
+  font-weight: 500;
+  color: black;
+}
+
+.status-filter {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  min-width: 150px;
+  color: black !important;
+}
+
+.about-expenses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about-expense-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-details h3 {
+  margin: 0 0 8px 0;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.expense-meta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.expense-user {
+  margin-bottom: 8px;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.expense-category {
+  background: rgba(255, 255, 255, 0.15);
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.expense-amount {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.expense-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.expense-date,
+.expense-payment {
+  color: black;
+  font-size: 0.9rem;
+}
+
+.expense-tags {
+  margin-top: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #495057;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+.expense-status {
+  text-align: right;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: black;
+}
+
+.empty-state p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.loading, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .approved-expenses-container {
+    padding: 15px;
+  }
+
+  .approved-expenses-header h1 {
+    font-size: 2rem;
+  }
+
+  .approved-expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .expense-status {
+    text-align: left;
+  }
+
+  .expense-meta {
+    flex-wrap: wrap;
+  }
+}
