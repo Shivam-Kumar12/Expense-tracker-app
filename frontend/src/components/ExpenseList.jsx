@@ -13,7 +13,7 @@ function ExpenseList({ onExpenseDeleted, onExpenseEdit }) {
   const fetchExpenses = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses', {
+      const response = await fetch('http://localhost:5000/api/expenses', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -40,7 +40,7 @@ function ExpenseList({ onExpenseDeleted, onExpenseEdit }) {
 
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/${expenseId}`, {
+      const response = await fetch(`http://localhost:5000/api/expenses/${expenseId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -55,8 +55,8 @@ function ExpenseForm({ onExpenseAdded, expenseToEdit, onEditCancel }) {
     try {
       const token = localStorage.getItem('token')
       const url = isEditing
-        ? `https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/${expenseToEdit._id}`
-        : 'https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses'
+        ? `http://localhost:5000/api/expenses/${expenseToEdit._id}`
+        : 'http://localhost:5000/api/expenses'
 
       const response = await fetch(url, {
         method: isEditing ? 'PUT' : 'POST',
