@@ -19,7 +19,7 @@ function ExpenseStats() {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('http://localhost:5000/api/expenses/stats', {
+      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

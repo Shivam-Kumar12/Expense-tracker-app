@@ -26,7 +26,7 @@ const AdminDashboard = () => {
       const token = localStorage.getItem('token')
 
       // Fetch admin stats (includes users, expenses, and financial data)
-      const statsResponse = await fetch('http://localhost:5000/api/admin/stats', {
+      const statsResponse = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/admin/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
   const fetchAllExpenses = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`http://localhost:5000/api/expenses/admin/all?page=${currentPage}&limit=10&status=${statusFilter}`, {
+      const response = await fetch(`https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/admin/all?page=${currentPage}&limit=10&status=${statusFilter}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
     setActionLoading(expenseId)
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`http://localhost:5000/api/expenses/${expenseId}/approve`, {
+      const response = await fetch(`https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/${expenseId}/approve`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -99,7 +99,7 @@ const AdminDashboard = () => {
     setActionLoading(expenseId)
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`http://localhost:5000/api/expenses/${expenseId}/reject`, {
+      const response = await fetch(`https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/${expenseId}/reject`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`

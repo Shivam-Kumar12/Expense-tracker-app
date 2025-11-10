@@ -21,7 +21,7 @@ function Reports() {
   const fetchAllExpenses = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('http://localhost:5000/api/expenses/admin/all', {
+      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/admin/all', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -43,7 +43,7 @@ function Reports() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('http://localhost:5000/api/admin/users', {
+      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/admin/users', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -61,7 +61,7 @@ function Reports() {
   const fetchSystemStats = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('http://localhost:5000/api/expenses/admin/stats', {
+      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/expenses/admin/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

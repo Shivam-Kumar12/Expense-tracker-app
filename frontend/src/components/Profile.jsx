@@ -27,7 +27,7 @@ const Profile = () => {
         email: user.email || ''
       })
       if (user.photo) {
-        setPhotoPreview(`http://localhost:5000${user.photo}`)
+        setPhotoPreview(`https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app${user.photo}`)
       }
     }
   }, [user])
@@ -78,7 +78,7 @@ const Profile = () => {
       }
 
       console.log('Sending profile update request...')
-      const response = await fetch('http://localhost:5000/api/auth/profile', {
+      const response = await fetch('https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app/api/auth/profile', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -93,7 +93,7 @@ const Profile = () => {
         setMessage('Profile updated successfully!')
         setIsEditing(false)
         setSelectedPhoto(null)
-        setPhotoPreview(data.user?.photo ? `http://localhost:5000${data.user.photo}` : null)
+        setPhotoPreview(data.user?.photo ? `https://backend-cretbql5t-shivam-kumar12s-projects.vercel.app${data.user.photo}` : null)
         if (data.user) {
           updateUser(data.user)
         }
